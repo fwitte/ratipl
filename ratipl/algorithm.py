@@ -4,11 +4,10 @@ import pandas as pd
 
 
 def calculate_radiation(phi=0, lam=0, timezone='UTC', gamma_e=0,
-              alpha_e=0, albedo=0, datetime=np.nan,
-              e_dir_hor=np.nan, e_diff_hor=np.nan, e_g_hor=np.nan):
+                        alpha_e=0, albedo=0, datetime=np.nan,
+                        e_dir_hor=np.nan, e_diff_hor=np.nan, e_g_hor=np.nan):
     r"""
-    Calculate global, direct, diffuse and reflected radiation on a tilted
-    plane given the radiation on the horizontal plane following DIN 5034-2.
+    Calculate radiation on a tilted following DIN 5034-2.
 
     Parameters
     ----------
@@ -45,7 +44,6 @@ def calculate_radiation(phi=0, lam=0, timezone='UTC', gamma_e=0,
         Dataframe containing the datetime as well as global, direct (dir),
         diffuse (diff) and reflected (refl) radiation on the tilted plane.
     """
-
     # transform angles from deg to rad
     phi = phi * np.pi / 180
     lam = lam * np.pi / 180
